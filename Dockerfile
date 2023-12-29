@@ -3,3 +3,4 @@ COPY target/maven-web-app*.war /usr/local/tomcat/webapps/maven-web-application.w
 ##
 ##
 #
+##    new content

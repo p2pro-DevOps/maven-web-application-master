@@ -12,7 +12,7 @@
 	<description>Maven Web Project for Java Project</description>
 
 	<organization>
-		<name>P2pro  Technologies</name>
+		<name>P2pro Technologies</name>
 		<url>http://p2protech.com/</url>
 	</organization>
 
@@ -21,23 +21,18 @@
 		<spring.version>5.1.2.RELEASE</spring.version>
 		<junit.version>4.11</junit.version>
 		<log4j.version>1.2.17</log4j.version>
-		<!-- <sonar.host.url>http://13.232.5.182:9000/</sonar.host.url>
-		<sonar.login>admin</sonar.login>
-		<sonar.password>admin</sonar.password> -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 	</properties>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
 			<version>20160212</version>
 		</dependency>
 
-		<!-- test dependencies -->
+		<!-- Test dependencies -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -59,18 +54,17 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- compile dependencies -->
-
+		<!-- Compile dependencies -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
-    		<groupId>org.springframework</groupId>
-    		<artifactId>spring-web</artifactId>
-    		<version>${spring.version}</version>
-  		</dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -81,38 +75,26 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-
-		<!-- provided dependencies -->
-
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<scope>provided</scope>
-		</dependency>
-
 	</dependencies>
 
 	<distributionManagement>
-
 	    <repository>
 	      <id>nexus</id>
 	      <name>P2pro Technologies Releases Nexus Repository</name>
 	      <url>http://54.255.174.111:8081/repository/flipkart-release/</url>
 	    </repository>
-
 	    <snapshotRepository>
 	      <id>nexus</id>
-	      <name>P2pro Technologies Snapshot Nexus Repository </name>
+	      <name>P2pro Technologies Snapshot Nexus Repository</name>
 	      <url>http://54.255.174.111:8081/repository/flipkart-snapshot/</url>
 	    </snapshotRepository>
-
 	</distributionManagement>
 
 	<build>
 		<finalName>maven-web-application</finalName>
 
 		<plugins>
+			<!-- Compiler plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -123,6 +105,7 @@
 				</configuration>
 			</plugin>
 
+			<!-- Jetty plugin -->
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
@@ -135,6 +118,7 @@
 				</configuration>
 			</plugin>
 
+			<!-- Eclipse plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-eclipse-plugin</artifactId>
@@ -147,8 +131,15 @@
 				</configuration>
 			</plugin>
 
-</plugins>
+			<!-- Add Maven WAR Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.2</version>
+			</plugin>
+
+		</plugins>
 	</build>
 
-
 </project>
+

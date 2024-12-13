@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -8,7 +9,6 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <name>maven-web-application</name>
-
     <description>Maven Web Project for Java Project</description>
 
     <organization>
@@ -17,7 +17,8 @@
     </organization>
 
     <properties>
-        <jdk.version>1.8</jdk.version>
+        <!-- Updated JDK version to 17 -->
+        <jdk.version>17</jdk.version>
         <spring.version>5.1.2.RELEASE</spring.version>
         <junit.version>4.11</junit.version>
         <log4j.version>1.2.17</log4j.version>
@@ -97,11 +98,11 @@
         <finalName>maven-web-application</finalName>
 
         <plugins>
-            <!-- Compiler plugin -->
+            <!-- Compiler plugin for Java 17 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.8.1</version>
                 <configuration>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>

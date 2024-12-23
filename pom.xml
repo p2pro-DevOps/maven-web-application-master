@@ -16,11 +16,13 @@
     </organization>
 
     <properties>
-        <!-- Updated to Java 11 -->
-        <jdk.version>11</jdk.version>
+        <jdk.version>1.8</jdk.version>
         <spring.version>5.1.2.RELEASE</spring.version>
         <junit.version>4.11</junit.version>
         <log4j.version>1.2.17</log4j.version>
+        <sonar.host.url>http://3.80.189.86:9000/</sonar.host.url>
+        <sonar.login>admin</sonar.login>
+        <sonar.password>admin</sonar.password>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -40,6 +42,7 @@
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
@@ -47,7 +50,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Servlet API (provided, for web applications) -->
+        <!-- Servlet API (provided) -->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -55,7 +58,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- Spring framework dependencies -->
+        <!-- Spring dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -81,20 +84,20 @@
     <distributionManagement>
         <repository>
             <id>nexus</id>
-            <name>P2pro Technologies Releases Nexus Repository</name>
-            <url>http://54.255.174.111:8081/repository/flipkart-release/</url>
+            <name>Amazon-release Releases Nexus Repository</name>
+            <url>http://34.228.7.190:8081/repository/Amazon-release/</url>
         </repository>
         <snapshotRepository>
             <id>nexus</id>
-            <name>P2pro Technologies Snapshot Nexus Repository </name>
-            <url>http://54.255.174.111:8081/repository/flipkart-snapshot/</url>
+            <name>Amazon-snapshot Snapshot Nexus Repository</name>
+            <url>http://34.228.7.190:8081/repository/Amazon-snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
 
     <build>
         <finalName>maven-web-application</finalName>
         <plugins>
-            <!-- Updated Maven Compiler Plugin -->
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -105,7 +108,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Updated Maven WAR Plugin -->
+            <!-- Maven WAR Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -116,7 +119,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Jetty Plugin (for running locally in development) -->
+            <!-- Jetty Plugin (for local development) -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>

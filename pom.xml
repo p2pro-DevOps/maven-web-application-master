@@ -29,7 +29,7 @@
             <version>20160212</version>
         </dependency>
 
-        <!-- test dependencies -->
+        <!-- Test dependencies -->
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -51,7 +51,7 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- compile dependencies -->
+        <!-- Compile dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
@@ -92,26 +92,22 @@
         <finalName>maven-web-application</finalName>
 
         <plugins>
+            <!-- Updated Maven Compiler Plugin for Java 17 compatibility -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version> <!-- Updated to 3.8.1 for Java 17 compatibility -->
+                <version>3.10.1</version> <!-- Updated to version 3.10.1 for Java 17 -->
                 <configuration>
                     <source>${jdk.version}</source>
                     <target>${jdk.version}</target>
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version> <!-- Updated to version 3.3.2 -->
-            </plugin>
-
+            <!-- Updated Jetty Maven Plugin -->
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
-                <version>9.2.11.v20150529</version>
+                <version>9.4.44.v20210927</version> <!-- Updated to a more recent version -->
                 <configuration>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webApp>
@@ -120,6 +116,14 @@
                 </configuration>
             </plugin>
 
+            <!-- Updated Sonar Maven Plugin -->
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version> <!-- Updated to a stable version compatible with Java 17 -->
+            </plugin>
+
+            <!-- Eclipse Plugin for IDE integration -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-eclipse-plugin</artifactId>

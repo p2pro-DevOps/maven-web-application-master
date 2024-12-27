@@ -15,7 +15,7 @@
         <spring.version>5.1.2.RELEASE</spring.version>
         <junit.version>4.11</junit.version>
         <log4j.version>1.2.17</log4j.version>
-        <sonar.host.url>http://34.229.126.7:9000/</sonar.host.url>
+        <sonar.host.url>http://18.205.234.235:9000/</sonar.host.url>
         <sonar.login>admin</sonar.login>
         <sonar.password>Homedeep8!</sonar.password>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -78,13 +78,13 @@
         <repository>
             <id>nexus</id>
             <name>Amazon-release Nexus Repository</name>
-            <url>http://54.145.221.50:8081/repository/Amazon-release/</url>
+            <url>http://52.90.233.153:8081/repository/Amazon-release/</url>
         </repository>
 
         <snapshotRepository>
             <id>nexus</id>
             <name>Amazon-snapshot Nexus Repository</name>
-            <url>http://54.145.221.50:8081/repository/Amazon-snapshot/</url>
+            <url>http://52.90.233.153:8081/repository/Amazon-snapshot/</url>
         </snapshotRepository>
     </distributionManagement>
 
